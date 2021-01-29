@@ -21,6 +21,7 @@ function renderToDo(toDoItem) {
   li.appendChild(createCheckbox(toDoItem));
   li.appendChild(span);
   li.appendChild(createDeleteButton(toDoItem));
+  li.appendChild(createEditButton(toDoItem));
     if (isComplete) {
     li.classList.add("completed");
   }
@@ -44,6 +45,15 @@ function createDeleteButton(toDoItem) {
     deleteToDo(toDoItem);
   });
   return button;
+}
+
+function createEditButton(toDoItem) {
+  const editButton = document.createElement("button");
+  editButton.innerText = "UPDATE";
+  editButton.addEventListener("click", () => {
+    editToDo(toDoItem);
+  });
+  return editButton;
 }
  
 
@@ -82,6 +92,14 @@ async function toggleToDoComplete(toDoItem) {
   li.classList.toggle("completed");
 }
 
+async function editToDo(toDoItem) {
+  const res = await fetch(`${BACKEND_URL}/todoitems/${toDoItem.id}`, {
+    method: "UPDATE",
+  });
+  if (res.ok) {
+    document.querySelector(`#to-do-item-${toDoItem.id}`).replaceWith();
+  }
+}
 
 async function deleteToDo(toDoItem) {
   const res = await fetch(`${BACKEND_URL}/todoitems/${toDoItem.id}`, {
@@ -102,10 +120,6 @@ async function deleteAllToDoItems() {
     location.reload();
   }
 }
-
-const editButton = document.createElement("button");
-
-
 
 
 deleteCompleteButton.addEventListener("click", deleteAllToDoItems);
