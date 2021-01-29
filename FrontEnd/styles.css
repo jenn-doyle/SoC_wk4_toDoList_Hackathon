@@ -1,5 +1,5 @@
 .completed {
-  color: rgb(169, 30, 187);
+  color: #5ba2d1;
   font-family: Georgia;
   text-decoration: line-through;
 }
@@ -18,18 +18,14 @@ h1 {
 }
 
 .things-to-do {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
   display: block;
   text-align: center;
   background-color: rgb(216, 65, 135);
   margin: 40px 300px;
   border-radius: 20px;
   font-family: Georgia;
-  font-size: 35px;
+  font-size: 25px;
   line-height: 55px;
-
 }
 
 body {
@@ -37,7 +33,6 @@ body {
 }
 
 .label {
-  display:flexbox;
   margin-left: 200px;
   align-items: center;
   justify-content: center;
@@ -49,7 +44,6 @@ body {
 }
 
 .option {
-  display:flexbox;
   margin-left: 20px;
   align-items: center;
   justify-content: center;
@@ -67,11 +61,10 @@ button {
   margin-left: 20px;
   border: none;
   color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
+  padding: 8px 18px;
+  font-size: 20px;
+  width: auto;
+  height: auto;
 }
 
 .delete-completed {
@@ -84,4 +77,8 @@ button {
   align-self: center;
   font-weight: bolder;
   margin: 40px 600px;
+}
+
+ul {
+  list-style-type: none;
 }

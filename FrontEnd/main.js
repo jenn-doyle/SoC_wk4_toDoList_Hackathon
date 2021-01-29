@@ -40,7 +40,7 @@ function createCheckbox(toDoItem) {
 
 function createDeleteButton(toDoItem) {
   const button = document.createElement("button");
-  button.innerText = "DELETE";
+  button.innerText = "Delete";
   button.addEventListener("click", () => {
     deleteToDo(toDoItem);
   });
@@ -49,7 +49,7 @@ function createDeleteButton(toDoItem) {
 
 function createEditButton(toDoItem) {
   const editButton = document.createElement("button");
-  editButton.innerText = "UPDATE";
+  editButton.innerText = "Update";
   editButton.addEventListener("click", () => {
     editToDo(toDoItem);
   });
@@ -93,11 +93,11 @@ async function toggleToDoComplete(toDoItem) {
 }
 
 async function editToDo(toDoItem) {
-  const res = await fetch(`${BACKEND_URL}/todoitems/${toDoItem.id}`, {
-    method: "UPDATE",
+    const res = await fetch(`${BACKEND_URL}/todoitems/${toDoItem.title}`, {
+    method: contenteditable="true",
   });
   if (res.ok) {
-    document.querySelector(`#to-do-item-${toDoItem.id}`).replaceWith();
+    document.querySelector(`#to-do-item-${toDoItem.title}`).replaceWith()
   }
 }
 
@@ -120,13 +120,34 @@ async function deleteAllToDoItems() {
     location.reload();
   }
 }
-
-
 deleteCompleteButton.addEventListener("click", deleteAllToDoItems);
+
+
+function compare(a, b) {
+  if (a.priority == "high" && b.priority == "medium" || a.priority == "high" && b.priority == "low" || a.priority == "medium" && b.priority == "low") {
+    return -1;
+  }
+  if (a.priority == "low" && b.priority == "medium" || a.priority == "low" && b.priority == "high" || a.priority == "medium" && b.priority == "high") {
+    return 1;
+  }
+  return 0;
+}
+
+async function sortedToDo() {
+  let ulALL = document.querySelectorAll("ul");
+  ulALL.forEach((li) => li.innerHTML = "");
+  const res = await fetch(`${BACKEND_URL}/todoitems`);
+  const data = await res.json();
+  data.sort(compare);
+  data.forEach(renderToDo);
+}
+
+
+let sortButton = document.querySelector("#sort-button");
+sortButton.addEventListener("click", sortedToDo);
+
 
 inputForm.addEventListener("submit", handleAddToDo);
 
 loadInitialToDos();
-
-
 
