@@ -1,15 +1,36 @@
 .completed {
-  color: lightgreen;
+  color: rgb(169, 30, 187);
+  font-family: Georgia;
+  text-decoration: line-through;
 }
 
 h1 {
-  color: #e22222;
-  width: 100px;
-  margin: 10px;
+  color: #1e087c;
   text-align: center;
   line-height: 75px;
-  font-size: 30px;
+  font-size: 60px;
+  font-family: Georgia;
+  background-color: rgb(24, 173, 153);
+  background-size: 30px 20px;
+  border-radius: 20px;
+  width: 30%;
+  
+}
+
+.things-to-do {
   display: flex;
-  flex-wrap: wrap;
-  background-color: DodgerBlue;
+  align-items: center;
+  justify-content: space-around;
+  display: block;
+  text-align: center;
+  background-color: rgb(216, 65, 135);
+  border-radius: 20px;
+  font-family: Georgia;
+  font-size: 20px;
+  line-height: 45px;
+  width: 50%;
+}
+
+body {
+  background-image: url("https://images.assetsdelivery.com/compings_v2/blankstock/blankstock1612/blankstock161202191.jpg");
 }
