@@ -13,8 +13,7 @@ h1 {
   background-color: rgb(24, 173, 153);
   background-size: 30px 20px;
   border-radius: 20px;
-  width: 30%;
-  
+ 
 }
 
 .things-to-do {
@@ -26,11 +25,49 @@ h1 {
   background-color: rgb(216, 65, 135);
   border-radius: 20px;
   font-family: Georgia;
-  font-size: 20px;
-  line-height: 45px;
-  width: 50%;
+  font-size: 35px;
+  line-height: 55px;
+
 }
 
 body {
   background-image: url("https://images.assetsdelivery.com/compings_v2/blankstock/blankstock1612/blankstock161202191.jpg");
+}
+
+.label {
+  display:flexbox;
+  margin-left: 200px;
+  align-items: center;
+  justify-content: center;
+  color: rgb(52, 9, 87);
+  font-family: Georgia;
+  font-size:xx-large;
+  font-weight: bolder;
+  align-content:center;
+}
+
+.option {
+  display:flexbox;
+  margin-left: 20px;
+  align-items: center;
+  justify-content: center;
+  color: rgb(52, 9, 87);
+  font-family: Georgia;
+  font-size:xx-large;
+  font-weight: bolder;
+  align-content: center;
+}
+
+
+button {
+  background-color: #f585e6;
+  border-radius: 20px;
+  margin-left: 20px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
 }

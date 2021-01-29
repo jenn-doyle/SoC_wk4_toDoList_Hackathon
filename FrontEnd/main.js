@@ -9,6 +9,7 @@ async function loadInitialToDos() {
   data.forEach(renderToDo);
 }
 
+
 function renderToDo(toDoItem) {
   const { id, title, priority, isComplete } = toDoItem;
 
@@ -20,10 +21,12 @@ function renderToDo(toDoItem) {
   li.appendChild(createCheckbox(toDoItem));
   li.appendChild(span);
   li.appendChild(createDeleteButton(toDoItem));
-  if (isComplete) {
+    if (isComplete) {
     li.classList.add("completed");
   }
+  mainList.appendChild(createDeleteTickedItems(toDoItem));
   mainList.appendChild(li);
+
 }
 
 function createCheckbox(toDoItem) {
@@ -43,6 +46,17 @@ function createDeleteButton(toDoItem) {
   });
   return button;
 }
+
+
+function createDeleteTickedItems(toDoItem) {
+  const myButton = document.createElement("button");
+  myButton.innerText = "DELETE COMPLETED";
+  myButton.addEventListener("click", () => {
+    toggleToDoComplete(toDoItem);
+  });
+  return myButton;
+}
+ 
 
 async function handleAddToDo(event) {
   // stops page reloading by default
@@ -79,6 +93,7 @@ async function toggleToDoComplete(toDoItem) {
   li.classList.toggle("completed");
 }
 
+
 async function deleteToDo(toDoItem) {
   const res = await fetch(`${BACKEND_URL}/todoitems/${toDoItem.id}`, {
     method: "DELETE",
@@ -88,6 +103,18 @@ async function deleteToDo(toDoItem) {
   }
 }
 
+async function deleteCompletedItems(toDoItem) {
+  const res = await fetch(`${BACKEND_URL}/todoitems/${toDoItem.id}`, {
+    method: "DELETE COMPLETED",
+  });
+  if (res.ok) {
+    document.querySelector(`#to-do-item-${toDoItem.id}`).remove();
+  }
+}
+
 inputForm.addEventListener("submit", handleAddToDo);
 
 loadInitialToDos();
+
+
+
