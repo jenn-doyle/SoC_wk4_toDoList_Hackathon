@@ -3,45 +3,45 @@ using Microsoft.AspNetCore.Mvc;
 
 
 [ApiController]
-[Route("[controller]")]
-public class ToDoItemsController : ControllerBase
+[Route("[controller]s")]
+public class ToDoItemController : ControllerBase
 {
-    private readonly ToDoItemsRepository _ToDoItemsRepository;
+    private readonly ToDoItemRepository _ToDoItemRepository;
 
-    public ToDoItemsController()
+    public ToDoItemController()
     {
-        _ToDoItemsRepository = new ToDoItemsRepository();
+       _ToDoItemRepository = new ToDoItemRepository();
     }
 
     [HttpGet]
-    public IEnumerable<ToDoItems> GetAllToDoItems(int id)
+    public IEnumerable<ToDoItem> GetAllToDoItem(int id)
     {
-        return _ToDoItemsRepository.GetAll();
+        return _ToDoItemRepository.GetAll();
     }
 
     [HttpGet("{id}")]
-    public ToDoItems GetToDoItems(int id)
+    public ToDoItem GetToDoItem(int id)
     {
-        return _ToDoItemsRepository.GetOne(id);
+        return _ToDoItemRepository.GetOne(id);
     }
 
     [HttpPut("{id}")]
-    public ToDoItems UpdateToDoItems(int id, [FromBody] ToDoItems ToDoItems)
+    public ToDoItem UpdateToDoItem(int id, [FromBody] ToDoItem toDoItem)
     {
-        ToDoItems.Id = id;
-        return _ToDoItemsRepository.Update(ToDoItems);
+        toDoItem.Id = id;
+        return _ToDoItemRepository.Update(toDoItem);
     }
 
     [HttpPost]
-    public ToDoItems CreateToDoItems([FromBody] ToDoItems ToDoItems)
+    public ToDoItem CreateToDoItem([FromBody] ToDoItem toDoItem)
     {
-        return _ToDoItemsRepository.Insert(ToDoItems);
+        return _ToDoItemRepository.Insert(toDoItem);
     }
 
     [HttpDelete("{id}")]
-    public void DeleteToDoItems(int id)
+    public void DeleteToDoItem(int id)
     {
-        _ToDoItemsRepository.Delete(id);
+        _ToDoItemRepository.Delete(id);
     }
 
 
