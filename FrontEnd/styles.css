@@ -11,6 +11,7 @@ h1 {
   font-size: 60px;
   font-family: Georgia;
   background-color: rgb(24, 173, 153);
+  margin: 40px 500px;
   background-size: 30px 20px;
   border-radius: 20px;
  
@@ -23,6 +24,7 @@ h1 {
   display: block;
   text-align: center;
   background-color: rgb(216, 65, 135);
+  margin: 40px 300px;
   border-radius: 20px;
   font-family: Georgia;
   font-size: 35px;
@@ -70,4 +72,16 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 18px;
+}
+
+.delete-completed {
+  font-size: 30px;
+  background-color: rgb(24, 173, 153);
+  text-align: center;
+  color: #1e087c;
+  font-family: Georgia;
+  display: flex;
+  align-self: center;
+  font-weight: bolder;
+  margin: 40px 600px;
 }

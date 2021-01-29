@@ -44,6 +44,11 @@ public class ToDoItemController : ControllerBase
         _toDoItemRepository.Delete(id);
     }
 
+    [HttpDelete]
+    public void DeleteAllToDoItems()
+    {
+        _toDoItemRepository.DeleteAll();
+    }
 
 }
 

@@ -24,7 +24,6 @@ function renderToDo(toDoItem) {
     if (isComplete) {
     li.classList.add("completed");
   }
-  mainList.appendChild(createDeleteTickedItems(toDoItem));
   mainList.appendChild(li);
 
 }
@@ -45,16 +44,6 @@ function createDeleteButton(toDoItem) {
     deleteToDo(toDoItem);
   });
   return button;
-}
-
-
-function createDeleteTickedItems(toDoItem) {
-  const myButton = document.createElement("button");
-  myButton.innerText = "DELETE COMPLETED";
-  myButton.addEventListener("click", () => {
-    toggleToDoComplete(toDoItem);
-  });
-  return myButton;
 }
  
 
@@ -103,14 +92,23 @@ async function deleteToDo(toDoItem) {
   }
 }
 
-async function deleteCompletedItems(toDoItem) {
-  const res = await fetch(`${BACKEND_URL}/todoitems/${toDoItem.id}`, {
-    method: "DELETE COMPLETED",
+const deleteCompleteButton = document.querySelector(".delete-completed");
+
+async function deleteAllToDoItems() {
+  const res = await fetch(`${BACKEND_URL}/todoitems/`, {
+    method: "DELETE",
   });
   if (res.ok) {
-    document.querySelector(`#to-do-item-${toDoItem.id}`).remove();
+    location.reload();
   }
 }
+
+const editButton = document.createElement("button");
+
+
+
+
+deleteCompleteButton.addEventListener("click", deleteAllToDoItems);
 
 inputForm.addEventListener("submit", handleAddToDo);
 
