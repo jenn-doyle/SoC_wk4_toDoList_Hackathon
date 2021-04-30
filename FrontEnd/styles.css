@@ -1,84 +1,171 @@
-.completed {
-  color: #5ba2d1;
-  font-family: Georgia;
-  text-decoration: line-through;
-}
-
-h1 {
-  color: #1e087c;
-  text-align: center;
-  line-height: 75px;
-  font-size: 60px;
-  font-family: Georgia;
-  background-color: rgb(24, 173, 153);
-  margin: 40px 500px;
-  background-size: 30px 20px;
-  border-radius: 20px;
- 
-}
-
-.things-to-do {
-  display: block;
-  text-align: center;
-  background-color: rgb(216, 65, 135);
-  margin: 40px 300px;
-  border-radius: 20px;
-  font-family: Georgia;
-  font-size: 25px;
-  line-height: 55px;
-}
-
 body {
-  background-image: url("https://images.assetsdelivery.com/compings_v2/blankstock/blankstock1612/blankstock161202191.jpg");
+  background-image: url("https://media1.popsugar-assets.com/files/thumbor/G7TaFrS9Cl5LIEDYSImEmgghMyo/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2020/09/23/919/n/1922507/69627564b15b793f_eberhard-grossgasteiger-J9NDmBVhN04-unsplash/i/Pastel-Sky-iPhone-Wallpaper.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .label {
-  margin-left: 200px;
-  align-items: center;
-  justify-content: center;
-  color: rgb(52, 9, 87);
-  font-family: Georgia;
-  font-size:xx-large;
+  display: flex;
+  margin: 50px auto;
+  color: rgb(70, 70, 70);
+  font-family: "Cedarville Cursive";
+  font-size: 30px;
   font-weight: bolder;
-  align-content:center;
+  justify-content: center;
 }
 
 .option {
   margin-left: 20px;
   align-items: center;
   justify-content: center;
-  color: rgb(52, 9, 87);
-  font-family: Georgia;
-  font-size:xx-large;
+  color: rgb(70, 70, 70);
+  font-family: "Cedarville Cursive";
+  font-size: 20px;
   font-weight: bolder;
   align-content: center;
+  border-radius: 6px;
 }
 
-
-button {
-  background-color: #5ba2d1;
-  border-radius: 20px;
+.Priority {
   margin-left: 20px;
-  border: none;
-  color: white;
-  padding: 8px 18px;
-  font-size: 20px;
-  width: auto;
-  height: auto;
 }
 
-.delete-completed {
-  font-size: 30px;
-  background-color: rgb(24, 173, 153);
+.add-button {
+  font-size: 15px;
+  background-color: #ffffff;
   text-align: center;
-  color: #1e087c;
-  font-family: Georgia;
+  color: rgb(70, 70, 70);
+  font-family: "Cedarville Cursive";
   display: flex;
   align-self: center;
   font-weight: bolder;
-  margin: 40px 600px;
+  margin-left: 20px;
+  margin-top: 10px;
+  border-radius: 6px;
+  border: 1px solid #dcdcdc;
+  cursor: pointer;
+  padding: 6px 6px;
+  text-decoration: none;
+  box-shadow: inset 0px 1px 0px 0px #ffffff;
+  background: linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+}
+
+.add-button:hover {
+  background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+  background-color: #f6f6f6;
+}
+
+.add-button:active {
+  position: relative;
+  top: 1px;
 }
 
 ul {
   list-style-type: none;
+}
+
+#sort-button {
+  font-size: 20px;
+  background-color: #ffffff;
+  text-align: center;
+  color: rgb(48, 48, 48);
+  font-family: "Cedarville Cursive";
+  display: flex;
+  align-self: center;
+  font-weight: bolder;
+  margin: 30px auto;
+  border-radius: 6px;
+  border: 1px solid #dcdcdc;
+  cursor: pointer;
+  padding: 6px 6px;
+  text-decoration: none;
+  box-shadow: inset 0px 1px 0px 0px #ffffff;
+  background: linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+}
+
+#sort-button:hover {
+  background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+  background-color: #f6f6f6;
+}
+
+#sort-button:active {
+  position: relative;
+  top: 1px;
+}
+
+.things-to-do {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  font-family: "Cedarville Cursive";
+  font-size: 25px;
+  font-weight: lighter;
+  line-height: 75px;
+  color: rgb(48, 48, 48);
+}
+
+button-list {
+  margin-left: 20px;
+  background-color: #ffffff;
+  color: rgb(70, 70, 70);
+  padding: 8px 15px;
+  font-size: 15px;
+  width: auto;
+  height: auto;
+  font-weight: bolder;
+  border-radius: 6px;
+  border: 1px solid #dcdcdc;
+  cursor: pointer;
+  padding: 6px 6px;
+  text-decoration: none;
+  box-shadow: inset 0px 1px 0px 0px #ffffff;
+  background: linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+}
+
+button-list:hover {
+  background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+  background-color: #f6f6f6;
+}
+
+button-list:active {
+  position: relative;
+  top: 1px;
+}
+
+.completed {
+  color: #5e5e5e;
+  font-family: "Cedarville Cursive";
+  text-decoration: line-through;
+}
+
+.delete-completed {
+  font-size: 30px;
+  background-color: #ffffff;
+  text-align: center;
+  color: rgb(70, 70, 70);
+  font-family: "Cedarville Cursive";
+  display: flex;
+  align-self: center;
+  font-weight: bolder;
+  margin: 40px auto;
+  border-radius: 6px;
+  border: 1px solid #dcdcdc;
+  cursor: pointer;
+  padding: 6px 6px;
+  text-decoration: none;
+  box-shadow: inset 0px 1px 0px 0px #ffffff;
+  background: linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+}
+
+.delete-completed:hover {
+  background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+  background-color: #f6f6f6;
+}
+
+.delete-completed:active {
+  position: relative;
+  top: 1px;
 }

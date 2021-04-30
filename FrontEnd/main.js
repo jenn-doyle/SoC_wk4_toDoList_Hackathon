@@ -1,7 +1,7 @@
 const mainList = document.querySelector("#main-list");
 const inputForm = document.querySelector("#input-form");
 
-const BACKEND_URL = "http://localhost:5000";
+const BACKEND_URL = "https://itemsforourlist.herokuapp.com";
 
 async function loadInitialToDos() {
   const res = await fetch(`${BACKEND_URL}/todoitems`);
@@ -9,12 +9,11 @@ async function loadInitialToDos() {
   data.forEach(renderToDo);
 }
 
-
 function renderToDo(toDoItem) {
   const { id, title, priority, isComplete } = toDoItem;
 
   const span = document.createElement("span");
-  span.innerText = `${title} - priority: ${priority}`;
+  span.innerText = `${title} => ${priority}`;
 
   const li = document.createElement("li");
   li.id = `to-do-item-${id}`;
@@ -22,11 +21,10 @@ function renderToDo(toDoItem) {
   li.appendChild(span);
   li.appendChild(createDeleteButton(toDoItem));
   li.appendChild(createEditButton(toDoItem));
-    if (isComplete) {
+  if (isComplete) {
     li.classList.add("completed");
   }
   mainList.appendChild(li);
-
 }
 
 function createCheckbox(toDoItem) {
@@ -39,8 +37,8 @@ function createCheckbox(toDoItem) {
 }
 
 function createDeleteButton(toDoItem) {
-  const button = document.createElement("button");
-  button.innerText = "Delete";
+  const button = document.createElement("button-list");
+  button.innerText = "🗑️";
   button.addEventListener("click", () => {
     deleteToDo(toDoItem);
   });
@@ -48,14 +46,13 @@ function createDeleteButton(toDoItem) {
 }
 
 function createEditButton(toDoItem) {
-  const editButton = document.createElement("button");
-  editButton.innerText = "Update";
+  const editButton = document.createElement("button-list");
+  editButton.innerText = "🖊️";
   editButton.addEventListener("click", () => {
     editToDo(toDoItem);
   });
   return editButton;
 }
- 
 
 async function handleAddToDo(event) {
   // stops page reloading by default
@@ -93,11 +90,11 @@ async function toggleToDoComplete(toDoItem) {
 }
 
 async function editToDo(toDoItem) {
-    const res = await fetch(`${BACKEND_URL}/todoitems/${toDoItem.title}`, {
-    method: contenteditable="true",
+  const res = await fetch(`${BACKEND_URL}/todoitems/${toDoItem.title}`, {
+    method: (contenteditable = "true"),
   });
   if (res.ok) {
-    document.querySelector(`#to-do-item-${toDoItem.title}`).replaceWith()
+    document.querySelector(`#to-do-item-${toDoItem.title}`).replaceWith();
   }
 }
 
@@ -122,12 +119,19 @@ async function deleteAllToDoItems() {
 }
 deleteCompleteButton.addEventListener("click", deleteAllToDoItems);
 
-
 function compare(a, b) {
-  if (a.priority == "high" && b.priority == "medium" || a.priority == "high" && b.priority == "low" || a.priority == "medium" && b.priority == "low") {
+  if (
+    (a.priority == "high" && b.priority == "medium") ||
+    (a.priority == "high" && b.priority == "low") ||
+    (a.priority == "medium" && b.priority == "low")
+  ) {
     return -1;
   }
-  if (a.priority == "low" && b.priority == "medium" || a.priority == "low" && b.priority == "high" || a.priority == "medium" && b.priority == "high") {
+  if (
+    (a.priority == "low" && b.priority == "medium") ||
+    (a.priority == "low" && b.priority == "high") ||
+    (a.priority == "medium" && b.priority == "high")
+  ) {
     return 1;
   }
   return 0;
@@ -135,19 +139,16 @@ function compare(a, b) {
 
 async function sortedToDo() {
   let ulALL = document.querySelectorAll("ul");
-  ulALL.forEach((li) => li.innerHTML = "");
+  ulALL.forEach((li) => (li.innerHTML = ""));
   const res = await fetch(`${BACKEND_URL}/todoitems`);
   const data = await res.json();
   data.sort(compare);
   data.forEach(renderToDo);
 }
 
-
 let sortButton = document.querySelector("#sort-button");
 sortButton.addEventListener("click", sortedToDo);
-
 
 inputForm.addEventListener("submit", handleAddToDo);
 
 loadInitialToDos();
-

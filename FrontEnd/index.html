@@ -3,33 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Things I Got To Do...</title>
+    <title>Things To Do...</title>
     <link rel="shortcut icon" href="./favicon.ico" />
     <link rel="stylesheet" href="./styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>To Do...</h1>
     <form id="input-form">
-      <div  class = "label"> 
-      <label>
-        I've got to
-        <input class = "option" type="text" />
-      </label>
-      <label>
-        Priority
-        <select class = "option">
-          <option >low</option>
-          <option >medium</option>
-          <option >high</option>
-        </select>
-      </label>
-      <button>Add To List</button>
+      <div class="label">
+        <label>
+          I've got to
+          <input class="option" type="text" />
+        </label>
+        <label class="Priority">
+          Priority
+          <select class="option">
+            <option>low</option>
+            <option>medium</option>
+            <option>high</option>
+          </select>
+        </label>
+        <button class="add-button">➕</button>
       </div>
     </form>
     <ul class="things-to-do" id="main-list">
-      <button id="sort-button">Order by Priority</button>
+      <button id="sort-button">Order by Priority 🔝</button>
     </ul>
-    <button class="delete-completed">Delete Completed</button>
+    <button class="delete-completed">Delete All 🗑️</button>
     <script src="./main.js"></script>
   </body>
 </html>
