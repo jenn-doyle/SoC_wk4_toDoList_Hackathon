@@ -12,27 +12,30 @@
     />
   </head>
   <body>
-    <form id="input-form">
-      <div class="label">
-        <label>
-          I've got to
-          <input class="option" type="text" />
-        </label>
-        <label class="Priority">
-          Priority
-          <select class="option">
-            <option>low</option>
-            <option>medium</option>
-            <option>high</option>
-          </select>
-        </label>
-        <button class="add-button">➕</button>
-      </div>
-    </form>
-    <ul class="things-to-do" id="main-list">
-      <button id="sort-button">Order by Priority 🔝</button>
-    </ul>
-    <button class="delete-completed">Delete All 🗑️</button>
-    <script src="./main.js"></script>
+    <div class="container">
+      <form id="input-form">
+        <div class="label">
+          <label>
+            I've got to
+            <input class="option" type="text" placeholder="Enter a todo..." />
+          </label>
+          <label class="Priority">
+            Priority
+            <select class="option">
+              <option>low</option>
+              <option>medium</option>
+              <option>high</option>
+            </select>
+          </label>
+          <button class="add-button">➕</button>
+        </div>
+      </form>
+      <ul class="things-to-do" id="main-list" contenteditable="true">
+        <button id="sort-button">Order by Priority 🔝</button>
+        <hr class="separator" />
+      </ul>
+      <button class="delete-completed">Delete Checked 🗑️</button>
+      <script src="./main.js"></script>
+    </div>
   </body>
 </html>

@@ -16,6 +16,7 @@ function renderToDo(toDoItem) {
   span.innerText = `${title} => ${priority}`;
 
   const li = document.createElement("li");
+  //li.contentEditable("true");
   li.id = `to-do-item-${id}`;
   li.appendChild(createCheckbox(toDoItem));
   li.appendChild(span);
@@ -90,11 +91,13 @@ async function toggleToDoComplete(toDoItem) {
 }
 
 async function editToDo(toDoItem) {
-  const res = await fetch(`${BACKEND_URL}/todoitems/${toDoItem.title}`, {
-    method: (contenteditable = "true"),
+  const res = await fetch(`${BACKEND_URL}/todoitems/${toDoItem.id}`, {
+    method: "PUT",
   });
   if (res.ok) {
-    document.querySelector(`#to-do-item-${toDoItem.title}`).replaceWith();
+    document
+      .querySelector(`#to-do-item-${toDoItem.id}`)
+      .contenteditable("true");
   }
 }
 

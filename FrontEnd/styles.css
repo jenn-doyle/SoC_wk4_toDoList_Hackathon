@@ -25,6 +25,12 @@ body {
   font-weight: bolder;
   align-content: center;
   border-radius: 6px;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .Priority {
@@ -32,66 +38,67 @@ body {
 }
 
 .add-button {
-  font-size: 15px;
-  background-color: #ffffff;
+  font-size: 20px;
   text-align: center;
-  color: rgb(70, 70, 70);
   font-family: "Cedarville Cursive";
   display: flex;
   align-self: center;
   font-weight: bolder;
   margin-left: 20px;
   margin-top: 10px;
-  border-radius: 6px;
-  border: 1px solid #dcdcdc;
+  border: none;
   cursor: pointer;
+  width: auto;
+  height: auto;
+  border-radius: 6px;
   padding: 6px 6px;
-  text-decoration: none;
-  box-shadow: inset 0px 1px 0px 0px #ffffff;
-  background: linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+  background: none;
 }
 
 .add-button:hover {
-  background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
-  background-color: #f6f6f6;
-}
-
-.add-button:active {
-  position: relative;
-  top: 1px;
+  background: linear-gradient(to bottom, #f6f6f600 5%, #ffffff2f 100%);
+  background-color: #f6f6f60e;
 }
 
 ul {
   list-style-type: none;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 #sort-button {
   font-size: 20px;
-  background-color: #ffffff;
   text-align: center;
-  color: rgb(48, 48, 48);
   font-family: "Cedarville Cursive";
   display: flex;
   align-self: center;
-  font-weight: bolder;
-  margin: 30px auto;
+  margin: 20px auto;
+  border: none;
   border-radius: 6px;
-  border: 1px solid #dcdcdc;
   cursor: pointer;
-  padding: 6px 6px;
-  text-decoration: none;
-  box-shadow: inset 0px 1px 0px 0px #ffffff;
-  background: linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+  background: none;
 }
 
 #sort-button:hover {
-  background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
-  background-color: #f6f6f6;
+  background: linear-gradient(to bottom, #f6f6f600 5%, #ffffff2f 100%);
+  background-color: #f6f6f60e;
 }
 
 #sort-button:active {
   position: relative;
   top: 1px;
+}
+
+.separator {
+  color: rgb(66, 66, 66);
+  background-color: rgb(66, 66, 66);
+  height: 2px;
+  width: 30%;
+  margin-top: -10px;
 }
 
 .things-to-do {
@@ -108,26 +115,21 @@ ul {
 }
 
 button-list {
-  margin-left: 20px;
-  background-color: #ffffff;
-  color: rgb(70, 70, 70);
+  margin-left: 10px;
   padding: 8px 15px;
   font-size: 15px;
   width: auto;
   height: auto;
   font-weight: bolder;
   border-radius: 6px;
-  border: 1px solid #dcdcdc;
+  border: none;
   cursor: pointer;
   padding: 6px 6px;
-  text-decoration: none;
-  box-shadow: inset 0px 1px 0px 0px #ffffff;
-  background: linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
 }
 
 button-list:hover {
-  background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
-  background-color: #f6f6f6;
+  background: linear-gradient(to bottom, #f6f6f600 5%, #ffffff2f 100%);
+  background-color: #f6f6f60e;
 }
 
 button-list:active {
@@ -142,30 +144,21 @@ button-list:active {
 }
 
 .delete-completed {
-  font-size: 30px;
-  background-color: #ffffff;
-  text-align: center;
   color: rgb(70, 70, 70);
+  font-size: 25px;
+  position: absolute;
+  right: 0;
+  margin: 30px;
   font-family: "Cedarville Cursive";
-  display: flex;
-  align-self: center;
   font-weight: bolder;
-  margin: 40px auto;
   border-radius: 6px;
-  border: 1px solid #dcdcdc;
+  border: none;
   cursor: pointer;
   padding: 6px 6px;
-  text-decoration: none;
-  box-shadow: inset 0px 1px 0px 0px #ffffff;
-  background: linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+  background: none;
 }
 
 .delete-completed:hover {
-  background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
-  background-color: #f6f6f6;
-}
-
-.delete-completed:active {
-  position: relative;
-  top: 1px;
+  background: linear-gradient(to bottom, #f6f6f60e 5%, #ffffff2f 100%);
+  background-color: #f6f6f60e;
 }
